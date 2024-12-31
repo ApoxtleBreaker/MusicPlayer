@@ -1,0 +1,111 @@
+:root{
+    /* 没想到有一天会在css里堆屎山 */
+    /* 防止挖屎直接在这改 */
+    /* 不同width可能导致点击和识别位置不同步==> 
+    点击的事件监听在all上 但是计算长度用的是now的长度 相对于Bar[maybe]
+    */
+    --progress-width :100%;
+    --progress-leftMargin: 100px;
+    --progress-top : 20px;
+}
+#bottomList{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--Light);
+    font-size: 20px;
+    z-index: 3;
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+#bottomControl{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+    width: 80%;
+    /* background-color: rgb(61, 61, 61); */
+    position: relative;
+    margin-right: var(--progress-leftMargin);
+}
+#PogressBar{
+    /* background-color: royalblue; */
+    position: relative;
+    height: 30px;
+    width: 100%;
+}
+#PogressBarBox{
+    background-color: aqua;
+    position: relative;
+    width: var(--progress-width);
+    height: 1vh;
+    top: var(--progress-top);;
+    /* left: 16vw; */
+    background-color: rgba(178, 178, 178, 0.444);
+    border-left: 10px solid rgba(67, 109, 147, 0.444);
+    border-right: 10px solid   rgba(126, 50, 50, 0.444);
+    border-radius:20px ;
+}
+#PogressAll{
+    z-index: 999;
+    position: fixed;
+    width: --progress-width;
+    background-color: rgba(224, 49, 212, 0);
+    height: 10px;
+    width: 100%;
+}
+#PogressNow{
+    max-width: --progress-width;
+    position: relative;
+    background-color: #6a82cc;
+    align-items: self-start;
+    height: 8px;
+    width: 20%;
+}
+
+#PogressNow::after{
+    position: absolute;
+    right: -10px;
+    top: -4px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #6a82ff;
+}
+
+#PogressTimeText{
+    position: relative;
+    text-shadow: 2px 2px 2px black;
+    width: fit-content;
+    font-size: 45px;
+}
+#functionButton{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 33.33%);
+    height: auto;
+    width: 260px;
+    /* gap: 2px; */
+}
+#functionButton button,.bottomButton{
+    width: 80%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+.bottomButton svg{
+    width: 100%;
+    height: 100%;
+}

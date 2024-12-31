@@ -1,0 +1,16 @@
+终端
+//sass编译命令
+sass name.scss/sass (name.css) 编译sass文件为css文件(css名称 不留则同名)
+sass --version 查看sass版本
+
+//github
+git init 初始化仓库
+git add . 添加文件到暂存区
+git commit -m "first commit" 提交到本地仓库
+git remote add origin https://github.com/xxx/xxx.git 关联远程仓库
+git push origin master 推送到远程仓库
+git push -u origin master 第一次推送到远程仓库
+git push -f origin master 强制推送到远程仓库
+git status 查看仓库状态
+git log 查看提交历史
+git branch -a 查看所有分支

@@ -1,0 +1,173 @@
+#musicDisplayBox {
+    background: linear-gradient(to bottom, #333333, #111111);
+    /* left: var(--test1); */
+    position: relative;
+    height: 100%;
+    width: 600px;
+    background-color: #333333;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+@keyframes circleA {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#CD {
+    z-index: 2;
+    top: 10%;
+    position: relative;
+    margin: auto auto;
+    height: 300px;
+    width: 300px;
+    background-color: antiquewhite;
+    background: radial-gradient(circle, #111111 70%, #ffffff00 -50%);
+    /* background: linear-gradient(to bottom, pink 50%, red -50%); */
+    /* animation: circleA 4s linear infinite; */
+    /* animation-name: circleA; */
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    filter: drop-shadow(0px 0px 1px #eeeeee);
+}
+#CD img {
+    clip-path: circle(50% at 50% 50%);
+    background-color: turquoise;
+    height: 60%;
+    width: 60%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#infoBox{
+    /* background-color: aliceblue; */
+    z-index: 1;
+    width: 80%;
+    margin: 20% auto;
+    height: 100%;
+    position: relative;
+}
+
+/* fontface {
+    font-family: ;
+    src: url();
+} */
+ @keyframes overflowScroll {
+    to{
+        transform: translateX(min(100cqw - 100%, 0px));
+    }
+ }
+#title{
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+#title span{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+#artist{
+    margin: 10px 0;
+    text-align: center;
+}
+#artist span{
+    color: gainsboro;
+    text-shadow: #ffffff 2px 2px 2px;
+    font-size: 20px;
+}
+#title, #artist{
+    --overflowscrollSpeed:2s;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    /* white-space: nowrap; */
+    white-space: pre;
+    width: 200px;
+    padding: 2px 4px;
+    /* resize: horizontal; */
+    container-type: inline-size;    
+    >span {
+        display: inline-block;
+        animation: overflowScroll var(--overflowscrollSpeed) 
+        /* ease-in-out */
+        /* cubic-bezier(0.075, 0.82, 0.165, 1) */
+        /* cubic-bezier(0, 1, 0.820, 1) */
+        linear
+        /* 曲线性运动 */
+        infinite 
+        alternate; 
+        /* 交替循环 */
+        /* reverse; */
+        /* 反向循环 */
+    }
+    >span::before, >span::after {
+        content: "   ";
+        white-space: pre;
+        /* background-color: violet; */
+    }
+}
+
+#lyricBox{
+    /* background-color: #5c5c5c; */
+    height: 80%;
+    overflow-y: hidden;
+    white-space: pre-wrap;
+    margin: 10px 0;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+#lyricBox span{
+    --backToTopSpeed: 0.2s;
+    animation: lyScrollIn var(--backToTopSpeed) ease-in forwards;
+    /* 归位的动画 */
+
+    font-size: 30px;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+#lyricBox .now{
+    /* --longJump : 0.8s; */
+    --nextJump : 2s;
+    /* 过度效果 */
+    transition: all --nextJump ease-in-out;
+    /* animation: colorChange 2s linear infinite; */
+    /* animation: lyScrollIn --nextJump ease-in forwards; */
+    /* animation: lyScrollIn --longJump ease-out backwards; */
+    color: #ffcc00;
+    font-size: 40px;
+}
+@keyframes colorChange {
+    0% {
+        color: #ffcc00;
+    }
+    50% {
+        color: #ff0000;
+    }
+    100% {
+        color: #ffcc00;
+    }
+}
+@keyframes lyScrollIn {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+#lyricBox .last, #lyricBox .next{
+    font-size: 20px;
+    color: #fffe;
+}

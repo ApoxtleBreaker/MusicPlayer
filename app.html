@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="./app/css/mainpage.css">
+    <link rel="stylesheet" href="./app/css/bottom.css">
+    <link rel="stylesheet" href="./app/css/musicDisplay.css">
+    <link rel="stylesheet" href="./app/css/filesUpload.css">
+</head>
+
+<body>
+    <div id="bg"></div>
+    <div class="coverBG"></div>
+    <div id="page">
+        <div id="mainbox">
+            <div style="position: relative;height: 100%;width: 20px;background-color: #333333;margin: 0 0;padding: 0 0;"></div>
+            <div id="musicListBox">
+                <div id="musicList">
+                    <span class="musicListChild" id="active">
+                        <span class="musicListChildTitle">第一首歌</span>
+                        <span class="musicListChildArtist">请先上传音乐文件</span>
+                    </span>
+                    <span class="musicListChild" id="music2">
+                        <span class="musicListChildTitle">第二首歌</span>
+                        <span class="musicListChildArtist">我们只是群演</span>
+                    </span>
+                    <span class="musicListChild" id="music3">
+                        <span class="musicListChildTitle">第三首歌</span>
+                        <span class="musicListChildArtist">按钮暂时还没做</span>
+                    </span>
+                    <span class="musicListChild" id="music4">
+                        <span class="musicListChildTitle">第四首歌</span>
+                        <span class="musicListChildArtist">但是可以用快捷键换歌</span>
+                    </span>
+                    <span class="musicListChild" id="music5">
+                        <span class="musicListChildTitle">第五首歌</span>
+                        <span class="musicListChildArtist">按一下f12在控制台(console)选项里看提示</span>
+                    </span>
+                    <span class="musicListChild" id="music6">
+                        <span class="musicListChildTitle">第六首歌</span>
+                        <span class="musicListChildArtist">未知作者</span>
+                    </span>
+                    <span class="musicListChild" id="music7">
+                        <span class="musicListChildTitle">第七首歌</span>
+                        <span class="musicListChildArtist">未知作者</span>
+                    </span>
+                    <span class="musicListChild" id="music8">
+                        <span class="musicListChildTitle">第八首歌</span>
+                        <span class="musicListChildArtist">未知作者</span>
+                    </span>
+                    <span class="musicListChild" id="music9">
+                        <span class="musicListChildTitle">第九首歌</span>
+                        <span class="musicListChildArtist">未知作者</span>
+                    </span>
+                    <span class="musicListChild" id="music10">
+                        <span class="musicListChildTitle">第十首歌</span>
+                        <span class="musicListChildArtist">未知作者</span>
+                    </span>
+                    <span class="musicListChild" id="music11">
+                        <span class="musicListChildTitle">第十一首歌</span>
+                        <span class="musicListChildArtist">未知作者</span>
+                    </span>
+
+                </div>
+            </div>
+            <!-- <div class="coverInner"></div> -->
+            <div id="musicDisplayBox">
+                <div id="CD"><img src="./app/files/img/bg.jpg" alt=""></div>
+                <div id=infoBox>
+                    <div id="title"><span>Undefined</span></div>
+                    <div id="artist"><span>Undefined</span></div>
+                    <div id="lyricBox">
+                        <span>但是看不见我</span>
+                        <span>目前歌词效果只做了css动效</span>
+                        <span>还没有写js</span>
+                        <span>暂时搁置</span>
+                        <span>不过效果还可以</span>
+                        <span>因为你不知可以看见我</span>
+                        <span>还可以看见我</span>
+                    </div>
+                </div>
+            </div>
+            <div id="SidecontrolBox">
+                <button id="fileButton" class="sideButton">上传文件</button>
+                <button id="coverButton" class="sideButton">上传封面</button>
+            </div>
+            <!-- <div>
+            <p>此页面用于上传音乐文件</p>
+            <p>请选择音乐文件或文件夹</p>
+            <p>第一行为原文件名 第二行请输入需要显示的曲名</p>
+            <p>文件名不同于播放器中显示名 不互相影响 不用担心</p>
+            <p>选择性添加封面文件请在选择文件夹以下建立cover的文件夹</p>
+            <p>并使歌曲和封面文件名相同</p>
+        </div> -->
+
+        </div>
+        <!-- <dialog id="fileDialog">
+        <input type="file" multiple webkitdirectory id="fileInput">
+    </dialog> -->
+
+
+        <div id="bottomList">
+            <div id="functionButton">
+                <button id="playButton" class="bottomButton">播放</button>
+                <button id="lastButton" class="bottomButton">上一首</button>
+                <button id="nextButton" class="bottomButton">下一首</button>
+            </div>
+            <div id="bottomControl">
+                <div id="PogressBar">
+                    <div id="PogressBarBox">
+                        <div id="PogressAll"></div>
+                        <div id="PogressNow"></div>
+                    </div>
+                </div>
+                <div>
+                    <div id="PogressTimeText">00:00</div>
+                    <div id="functionButtonSub">
+                        <button id="loopButton" class="bottomButtonSub">顺序播放</button>
+                        <button id="volumeButton" class="bottomButtonSub">音量</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- test audio -->
+    <audio id="Eaudio" src="http://undefined.error.null"></audio>
+</body>
+
+<script src="./app/Yanjer/yanjer.js"></script>
+<script src="./app/js/userSelect.js"></script>
+<script src="./app/js/mainFunction.js"></script>
+<script src="./app/js/progressBar.js"></script>
+<script src="./app/js/hotKey.js"></script>
+<script src="./app/js/filesUpload.js"></script>
+
+</html>

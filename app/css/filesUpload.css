@@ -1,0 +1,192 @@
+@keyframes moveIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+#fileDialog{
+    animation: moveIn 0.5s ease-in-out forwards;
+    height: 800px;
+    width: 900px;
+    transition: all 0.5s ease-in-out;
+    overflow-x: hidden;
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: #fff4;
+    border: none;
+    border-radius: 20px;
+
+    >div[tip]{
+        margin: 20px;
+        /* display: flex; */
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: start;
+        height: 400px;
+        width: 100%;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    >div[editor]{
+        margin: auto auto;
+        margin-top: 200px;
+        width: 90%;
+        height: fit-content;
+        /* overflow-y: scroll; */
+        overflow-x: hidden;
+        >span{
+            display: block;
+            width: 100%;
+            >span{
+                display: inline-block;
+                width: 100%;
+            font-size:1.5em ;
+            margin-top: 20px;
+
+            }
+            >input{
+                display: inline-block;
+                width: 100%;
+                border: none;
+                font-size:1.5em ;
+            }
+        }
+    }
+}
+#fileDialog[full]{
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.EfileInput{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+.Ecancelbutton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+.EfullButton{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.Euploadbutton{
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 20%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 800px;
+    height: 200px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.Euploadbutton:hover{
+    /* background-color: rgb(0, 0, 0); */
+    /* color: rgb(255, 255, 255); */
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.Euploadbutton[reset]{
+    position: absolute;
+    top: 0;
+    right: 100px;
+    width: 200px;
+    height: 50px;
+    left: unset;
+    transform: unset;
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#folderOption,#fileOption{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+}
+#folderOption:hover,#fileOption:hover{
+    color: rgb(0, 136, 255);
+    /* background-color: rgb(255, 255, 255); */
+}
+#folderOption[selected],#fileOption[selected]{
+    border: rgb(255, 255, 255) solid 2px;
+    background-color: rgb(47, 47, 47);
+}   
+.renameButton{
+    margin: 20px;
+    width: 100%;
+    height: 50px;
+}
+#fileButton,
+.Ecancelbutton,
+.Ecancelbutton,
+.EfullButton,
+.Euploadbutton,
+.Euploadbutton:hover,
+.Euploadbutton[reset],
+.renameButton{
+    >svg{
+        height: 100%;
+        width: 100%;
+    }
+}
+.sideButton{
+    width: auto;
+    height: 200px;
+    border: none;
+    background-color: rgb(84, 84, 84);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center; 
+    line-height: 200px;
+}
+.sideButton:hover{
+    background-color: #1e1e1e;
+    cursor: pointer;
+    >svg{
+        filter:blur(5px);
+    }
+}
+#fileButton{
+
+}
+#fileButton:hover{
+
+}

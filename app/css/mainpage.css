@@ -1,0 +1,193 @@
+:root{
+    --Light : #f2f2f2;
+    --Dark : #1e1e1e;
+    /* --LightDark : #424242; */
+    --LightDark : #0d0d0d;
+
+    --test1 :-40%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#bg{
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../files/img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+#page{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    /* background-color: var(--Dark) ; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+#mainbox{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    /* background-color: var(--Dark) ; */
+    display: flex;
+    flex-direction: row;
+    /* overflow: hidden; */
+}  
+.coverBG{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* //开关背景遮罩 */
+    /* background-color: var(--Dark) ; */
+    /* opacity: 0.8;  */
+    /* transition: opacity .5s;  */
+}
+.coverInner{
+    position: absolute;
+    top: 0;
+
+    /* //局部遮罩定位 但是影响flex布局 */
+    /* left: var(--test1); */
+
+    
+    /* height: 100%; */
+    /* width: 100%; */
+    background-color: var(--Dark) ;
+    /* background-color: aqua; */
+    opacity: 0.8; 
+    transition: opacity .5s; 
+
+    width: 60%;
+    height: 100vh;
+    position: relative;
+}
+#musicListBox{
+    z-index: 2;
+    width: 60%;
+    height: 100%;
+    /* height: auto; */
+    /* position: absolute; */
+    position: relative;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%);     */
+    /* background-color: red; */
+    overflow-y: scroll;
+}
+#musicList{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center; */
+    display: grid;
+    grid-template-rows: repeat(auto, 120px);
+    /* grid-gap: 2px; */
+    margin: 0;
+    margin-bottom: 120px;
+}
+.musicListChild{
+    color: var(--Light);
+    background-color: var(--LightDark);
+    /* border: 2px solid var(--Light); */
+    /* border-radius: 20px; */
+    height: 120px;
+    align-items: center;
+    justify-content: center start;
+    display: flex;
+
+    opacity: 0.9;
+    /* opacity: 1; */
+
+    transition: all 0.2s ease-in-out;   
+    
+}
+.musicListChild:hover{
+    background-color: #1e1e1e;
+    cursor: pointer;
+
+    animation:1s;
+    opacity: 0.5;
+    margin: auto 20px;
+    /* // */
+    margin-right: 0;
+    transition: all 0.2s ease-in-out;   
+
+}
+.musicListChild .musicListChildTitle,.musicListChild .musicListChildArtist {
+    /* background-color: red; */
+    overflow-x: hidden;
+    white-space: nowrap;
+    mask: linear-gradient(
+        90deg,  
+        #fff 10%,
+        white 90%,
+        transparent);
+    display: inline-block;
+    margin: auto 20px;
+    transition: all 0.1s ease-in;   
+
+}
+.musicListChild .musicListChildTitle{
+    /* max-width: 50%; */
+    max-width: 300px;
+    width: fit-content;
+    font-size: 40px;
+    color: #f2f2f2;
+}
+.musicListChild .musicListChildArtist{
+    font-size: 30px;
+    color: #555555;
+    margin-left: 20px;
+
+}
+#active:hover{
+    margin: auto 0;
+}
+#active{
+    transition: all 0.2s ease-in-out;   
+}
+#active .musicListChildTitle{
+    transition: all 0.1s ease-in;   
+
+    color: blue;
+    max-width: 60%;
+    width: fit-content;
+    font-size: 50px;
+    margin: auto 40px;
+
+}
+#active .musicListChildTitle::before{
+
+    content: "Σ-";
+    color: blue;
+    font-size: 50px;
+    position: relative;
+}
+#active .musicListChildArtist{
+    transition: all 0.1s ease-in;   
+    margin-left: 30px;
+    color: rgb(0, 0, 146);
+    width: 60%;
+    font-size: 40px;
+}
+#active .musicListChildArtist::before, #active .musicListChildArtist::after{
+    content: "-";
+}

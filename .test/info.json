@@ -1,0 +1,23 @@
+{
+    "index1":{
+        "music":{
+            "title":"曲名 用户定义",
+            "artist":"参与创作者  用户定义",
+            "Base64":"上传文件转换成的base64编码 在用时转成url"
+        },
+        "cover":{
+            "Base64":"上传文件转换成的base64编码 在用时转成url"
+        }
+    },
+    "index2":{
+        "music":{
+            "title":"<Sring>",
+            "artist":"<String>",
+            "Base64":"<String(base64)>"
+        },
+        "cover":{
+            "Base64":"<String(base64)>"
+        }
+    },
+    "index3...":{}
+}
